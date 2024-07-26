@@ -27,10 +27,25 @@ while True:
 
     # This will give the list of poition of all 21 point in hand for every action 
     lmList = detector.findPosition(img, draw = False)
-    if len(lmList) != 0:
-        print(lmList[2])
 
+    # By using this line we get list of position of perticular points
+    # This will return no value if there is no hands
+    if len(lmList) != 0:
+        print(lmList[4],lmList[8]) # We are using the position that are needed to change the volume
+
+
+        # This gives the 1st and 2nd value of poins to particular variable
+        x1 , y1 = lmList[4][1],lmList[4][2]
+        x2 , y2 = lmList[8][1],lmList[8][2]
+
+        # Creating Circle on the particular points
+        cv2.circle(img,(x1,y1),15,(255,0,255),cv2.FILLED)
+        cv2.circle(img,(x2,y2),15,(255,0,255),cv2.FILLED)
+
+        # This connects the two hand point with a line
+        cv2.line(img,(x1,y1),(x2,y2),(255,0,255),3)
     
+
     # Defining the FPS
 
     current_Time = time.time()
