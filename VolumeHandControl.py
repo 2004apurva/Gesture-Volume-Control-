@@ -32,8 +32,13 @@ interface = devices.Activate(
 volume = interface.QueryInterface(IAudioEndpointVolume)
 #volume.GetMute()
 #volume.GetMasterVolumeLevel()
-print(volume.GetVolumeRange())
-#volume.SetMasterVolumeLevel(-20.0, None)
+volRange = volume.GetVolumeRange()
+
+minVol = volRange[0]
+maxVol = volRange[1]
+vol = 0
+volBar = 400
+volPer=0
 
 
 
@@ -75,10 +80,28 @@ while True:
 
         # Gives the distance between the points
         length = math.hypot(x2-x1,y2-y1)
-        print(length)
+        # print(length)
+
+        # Hand Range 50 - 300
+        # Volume Range -65 - 0
+        vol = np.interp(length,[50,300],[minVol,maxVol])
+        volBar = np.interp(length,[50,300],[400,150])
+        volPer = np.interp(length,[50,300],[0,100])
+        print(int(length),vol)
+        volume.SetMasterVolumeLevel(vol, None)
+
+
+
+
         # Changing the color of the center points According to disqtance
         if length<40:
             cv2.circle(img, (cx, cy), 15, (0, 255, 0), cv2.FILLED)
+
+        cv2.rectangle(img,(50,150),(85,400),(255,0,0),3)
+        cv2.rectangle(img,(50,int(volBar)),(85,400),(255,0,0),cv2.FILLED)
+        cv2.putText(img,f'{(int(volPer))}%',(40,450),cv2.FONT_HERSHEY_PLAIN,1,(255,0,0),3)
+
+        
     
 
     # Defining the FPS
@@ -89,7 +112,7 @@ while True:
 
     # Displaying the fps on Screen And font,size ETC
 
-    cv2.putText(img,f'FPS:{(int(fps))}',(10,70),cv2.FONT_HERSHEY_PLAIN,3,(255,0,0),3)
+    cv2.putText(img,f'FPS:{(int(fps))}',(40,50),cv2.FONT_HERSHEY_PLAIN,1,(255,0,0),3)
 
 
     cv2.imshow("IMG", img)
