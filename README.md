@@ -6,8 +6,8 @@ Creating a README file for your project is a great idea. A well-structured READM
 
 # Hand Gesture Volume Control
 
-![Project Logo or Screenshot](path/to/your/logo_or_screenshot.png)
-![alt tex
+![IMG_20240727_130113](https://github.com/user-attachments/assets/6f30fe28-d414-4d93-9e8a-65e53b61173c)
+
 ## Table of Contents
 - Introduction
 - Features(#features)
@@ -27,10 +27,14 @@ Hand Gesture Volume Control is a project that allows users to control the volume
 - Control system volume using gestures
 - Easy to set up and use
 
-## Demo
-Include a link to a demo video or GIF showing your project in action.
+## MediaPipe Framework
+
 
 ![Demo GIF](path/to/your/demo.gif)
+
+![WhatsApp Image 2024-07-27 at 13 13 40](https://github.com/user-attachments/assets/6dba9945-f8bd-44b5-bc6c-15f4f1e3a99a)
+
+
 
 ## Installation
 
