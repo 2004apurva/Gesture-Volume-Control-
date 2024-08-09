@@ -86,7 +86,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Contact
 Your Name - [your.email@example.com](mailto:your.email@example.com)
 
-Project Link: [https://github.com/yourusername/hand-gesture-volume-control](https://github.com/yourusername/hand-gesture-volume-control)
+Project Link: [https://github.com/yourusername/hand-gesture-volume-control](https://github.com/2004apurva/Gesture-Volume-Control-?tab=readme-ov-file)
 
 ---
 
